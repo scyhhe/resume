@@ -4,11 +4,23 @@ LaTeX template for my personal resume
 
 ## [Available as PDF via CDN](https://cdn.statically.io/gh/scyhhe/resume/master/resume.pdf)
 
+### Build using Docker
+
+```docker
+docker build -t latex .
+
+docker run --rm -i -v "$PWD":/data latex latexmk resume.tex
+-- or --
+docker run --rm -i -v "$PWD":/data latex pdflatex resume.tex
+```
+
+### Using LaTeX Workshop VS Code extension to generate the PDF and PNG via MiKTeX
+
 Since I decided to set this up on a Windows machine and found a few issues along the way, I wrote a small guide on how to do so.
 
 Even if not on Windows, the provided recipes and tools can help you with generating a PDF or PNG out of your LaTeX template if you happen to be using LaTeX Workshop in VS Code, which can be useful.
 
-### Generating locally on a Windows Machine
+#### Generating locally on a Windows Machine
 
 1. Install [MiKTeX](https://miktex.org/)
 2. Install [Perl](https://www.perl.org/get.html)
@@ -21,7 +33,7 @@ Even if not on Windows, the provided recipes and tools can help you with generat
 6. If everything is correct, you should get an updated PDF everytime you save your `.tex` resume!
    1. For PDF generation, which is using [dvipng](https://ctan.org/pkg/dvipng) under the hood, you have to manually build the project with the corresponding `PNG` recipe found below - simply open the Command Palette and click `LaTeX Workshop: Build with recipe` and choose `PNG`
 
-```latex
+```json
     "latex-workshop.latex.recipes": [
         {
             "name": "latexmk",
@@ -86,8 +98,3 @@ Even if not on Windows, the provided recipes and tools can help you with generat
     ]
 
 ```
-
-<!-- ### Resume Preview
-
-![Resume Preview](resume.png) 
--->
