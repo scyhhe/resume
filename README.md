@@ -2,7 +2,7 @@
 
 LaTeX template for my personal resume
 
-## Using LaTeX Workshop VS Code extension to generate the PDF and PNG via MiKTeX
+## [Available as PDF via CDN](https://cdn.statically.io/gh/scyhhe/resume/master/resume.pdf)
 
 Since I decided to set this up on a Windows machine and found a few issues along the way, I wrote a small guide on how to do so.
 
